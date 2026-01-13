@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= @project.title %></h1>
+
+<% if @project.featured_image.attached? %>
+  <div>
+    <%= image_tag @project.featured_image %>
+  </div>
+<% end %>
+
+<div>
+  <h2>Description</h2>
+  <%= @project.description %>
+</div>
+
+<div>
+  <%= link_to "Edit this project", edit_project_path(@project) %> |
+  <%= link_to "Back to projects", projects_path %>
+
+  <%= button_to "Destroy this project", @project, method: :delete %>
+</div>
